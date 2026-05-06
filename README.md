@@ -1,44 +1,40 @@
-# Cinematics Analytics Dashboard
+# Movie Analytics Dashboard
+
+Movie Analytics Dashboard is a production-ready Python pipeline for analyzing movie financial performance, audience sentiment, and genre-level trends using TMDB and IMDB datasets.
 
 ## Overview
 
-The Cinematics Analytics Dashboard repository contains a production-ready Python data analytics pipeline for movie performance and audience sentiment analysis. The project uses TMDB movie metadata and IMDB review data to generate cleaned datasets, exploratory visualizations, and a reproducible analysis workflow.
-
-## One-line Summary
-
-A complete movie analytics pipeline for cleaning dataset inputs, exploring movie finance and genre patterns, and generating calibrated dataset outputs for downstream analysis.
+This project delivers a reproducible movie analytics workflow for cleaning raw movie and review data, generating exploratory analysis, and producing a cleaned dataset ready for downstream modeling.
 
 ## Problem Solved
 
-This repository helps analytics practitioners understand movie success drivers by providing a structured data cleaning pipeline, exploratory data analysis, and reproducible outputs for finance, rating, and genre evaluation.
+Many movie analytics projects contain fragmented data, inconsistent cleaning steps, and unclear execution paths. This repository centralizes the data ingestion, preprocessing, and exploratory analysis steps into a single reproducible pipeline.
 
 ## Features
 
-- Clean and impute TMDB movie financial data
-- Extract release year, genre, and revenue distribution insights
-- Generate EDA visualizations for budget, revenue, ratings, and genre frequency
-- Output a cleaned CSV dataset for downstream modeling
-- Support reproducible execution with a single installation flow
+- Load TMDB movie metadata and IMDB review data
+- Clean and merge movie financial, ratings, and genre information
+- Extract release year, revenue, budget, and sentiment distributions
+- Generate exploratory visualizations for key movie performance metrics
+- Produce a cleaned CSV dataset for downstream analysis
+- Support reproducible execution with a well-defined installation flow
 
 ## Tech Stack
 
 - Python 3.x
-- Pandas
+- pandas
 - NumPy
 - Matplotlib
 - Seaborn
 - SciPy
-- Scikit-learn
-- Jupyter
-- Streamlit
-- Plotly
-- WordCloud
+- scikit-learn
+- Jupyter Notebook
 
 ## Installation
 
 ```bash
-git clone https://github.com/ali-ezz/cinematics-analytics-dashboard.git
-cd cinematics-analytics-dashboard
+git clone https://github.com/ali-ezz/movie-analytics-dashboard.git
+cd movie-analytics-dashboard
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
@@ -47,7 +43,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the analysis pipeline to clean the TMDB dataset and generate plots:
+Run the main analysis pipeline to clean data and generate outputs:
 
 ```bash
 python run_analysis_fixed.py
@@ -62,7 +58,7 @@ jupyter notebook movie_analysis_pipeline.ipynb
 
 ## Project Structure
 
-```
+```text
 .
 ├── README.md
 ├── LICENSE
@@ -85,30 +81,29 @@ jupyter notebook movie_analysis_pipeline.ipynb
 │   └── README.md
 ├── tests/
 │   └── test_data_loading.py
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   └── PULL_REQUEST_TEMPLATE.md
-└── *.png
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    └── PULL_REQUEST_TEMPLATE.md
 ```
 
 ## Environment Variables
 
-This project supports external dataset configuration through a `.env` file. Copy and customize the example file before running the pipeline.
+Use the `.env.example` file as a template and create a local `.env` file before running the analysis.
 
 ```bash
 cp .env.example .env
 ```
 
-Example settings:
+Required variables:
 
-- `DATA_ROOT`: Root dataset folder
-- `TMDB_MOVIES`: Path to the raw TMDB dataset
-- `IMDB_REVIEWS`: Path to the raw IMDB sentiment dataset
-- `OUTPUT_FILE`: Path for the cleaned output CSV
+- `DATA_ROOT`: Folder containing raw dataset files
+- `TMDB_MOVIES`: Path to the TMDB movie dataset CSV
+- `IMDB_REVIEWS`: Path to the IMDB reviews dataset CSV
+- `OUTPUT_FILE`: Output path for the cleaned dataset CSV
 
 ## Results
 
-The main output is a cleaned dataset saved as `movies_cleaned.csv`. The repository also includes analysis artifacts such as:
+The primary result is the cleaned dataset stored in `movies_cleaned.csv`. The pipeline also produces analysis artifacts such as:
 
 - `rating_distribution.png`
 - `budget_revenue_scatter.png`
@@ -117,15 +112,11 @@ The main output is a cleaned dataset saved as `movies_cleaned.csv`. The reposito
 
 ## Future Improvements
 
-- Convert the analysis pipeline into a reusable package under `src/`
-- Add end-to-end tests for data integrity and output validation
-- Create a Streamlit dashboard entrypoint from the cleaned dataset
-- Improve missing-value handling and revenue/budget validation logic
-- Add automated release notes and versioning
-
-## Credits
-
-This repository was created for movie analytics and dataset exploration. It uses publicly available TMDB and IMDB CSV data sources.
+- Refactor analysis code into a reusable Python package under `src/`
+- Add unit tests for data validation and output integrity
+- Standardize raw data under a dedicated `data/` directory
+- Add a lightweight dashboard entrypoint for interactive exploration
+- Document dataset preparation and expected input formats
 
 ## License
 

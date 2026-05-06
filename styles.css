@@ -1,0 +1,80 @@
+/* Premium Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Metric Cards */
+.metric-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Headers */
+h1,
+h2,
+h3 {
+    color: #111827;
+    font-weight: 700;
+}
+
+h1 {
+    background: linear-gradient(90deg, #ff4b4b 0%, #ff8f4b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Standard property for compatibility */
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    white-space: pre-wrap;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    color: #4b5563;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #ff4b4b !important;
+    color: white !important;
+}
+
+/* Charts */
+.chart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
